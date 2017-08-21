@@ -1,0 +1,31 @@
+---
+title: "README"
+author: "David Parra"
+date: "August 8, 2017"
+output: html_document
+---
+
+## Importaciones
+Proyecto para analizar las importaciones (y exportaciones) en Colombia (2009 - Presente)
+
+##Como correr
+
+Con R instalado. Digitar lo siguiente en una terminal o en Rstudio
+
+```{r run,cache=TRUE,warning=FALSE,message=FALSE, eval=FALSE}
+  source("run.R")
+  run(filename = "500_PERIODO_01_2016.csv", directorio = "Importaciones", download = FALSE)
+```
+
+## Lista de archivos
+
+- readData.R: Lee el archivo.csv formato "500_PERIODO_01_2016.csv", filtra de acuerdo al número de la partida arancelaria y selecciona columnas de interés (Variable columns)
+- processData.R: Se encarga de hacer la segmentación y procesamiento de la base de datos
+- plots.R: Se encarga de graficar los resultados
+- run.R: Script principal que se encarga de correr el análisis
+
+## Descarga de archivos
+
+Para descargar los archivos de importaciones se puede correr el código con el comando download = TRUE, o se pueden descargar manualmente del siguiente link [DIAN](http://www.dian.gov.co/dian/14cifrasgestion.nsf/pages/Registro_de_las_Declaraciones_de_Importacion_y_Exportacion?OpenDocument)
+
+Para el procesamiento de los datos mediante el código es necesario convertir los archivos .xlxs a .csv para esto es recomendable usar Excel y la opción guardar como (La funcionalidad de cambiar el formato de xlsx a csv no está incluída dentro del código, sin embargo los archivos que se procesan son exclusivamente .csv), todos los nombres de los archivos deben estar en el formato "500_PERIODO_MM_YYYY.csv" MM = mes, YYYY = año guardados en una carpeta "/Importaciones". Una vez los archivos se encuentran en el formato y el directorio adecuado es posible correr el código.
