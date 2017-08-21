@@ -19,7 +19,7 @@ run <- function(filename = "500_PERIODO_01_2016.csv", directorio = "Importacione
     
     meses <- sprintf("500_PERIODO_%02d_", 1:12)
     if(download == TRUE){
-      for(j in 2016:2017)
+      for(j in 2009:2017)
         for(i in 1:12){
           url <- paste0("http://www.dian.gov.co/descargas/cifrasyg/declaraciones/importacion/",j,"/",meses[i],j,".zip")
           name <- paste0(meses[i],j,".zip")
